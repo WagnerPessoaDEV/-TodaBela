@@ -396,7 +396,7 @@ body.dark-mode .sobre p {
 .loja-track {
     display: flex;
     width: max-content;
-    animation: scrollRight 40s linear infinite;
+    animation: scrollRight 120s linear infinite;
 }
 
 /* Pausa ao passar o mouse */
