@@ -211,7 +211,7 @@ nav {
 
 /* --- Hero Section (Banner) --- */
 .hero {
-    height: 100vh;
+    height: 85vh; /* Reduzido de 100vh para mostrar conteúdo abaixo */
     position: relative;
     display: flex;
     align-items: center;
