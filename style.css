@@ -14,6 +14,11 @@
     --card-bg: #ffffff;
     --footer-bg: #1a1a1a;
     --footer-text: #ffffff;
+    
+    /* Degradês (Modo Claro) */
+    --bg-body: linear-gradient(135deg, #fdfbfd 0%, #f4eff6 100%);
+    --bg-section-white: linear-gradient(180deg, #ffffff 0%, #faf5fc 100%);
+    --bg-section-gray: linear-gradient(180deg, #f9f9f9 0%, #f3e5f5 100%);
 }
 
 /* Variáveis para Modo Escuro */
@@ -27,6 +32,11 @@ body.dark-mode {
     --cor-secundaria: #9b59b6; /* Roxo um pouco mais claro para contraste */
     --footer-bg: #0a0a0a; /* Fundo do rodapé mais escuro no modo dark */
     --footer-text: #e0e0e0;
+
+    /* Degradês (Modo Escuro) */
+    --bg-body: linear-gradient(135deg, #050505 0%, #1a0b20 100%);
+    --bg-section-white: linear-gradient(180deg, #1e1e1e 0%, #2a1b30 100%);
+    --bg-section-gray: linear-gradient(180deg, #121212 0%, #0d0510 100%);
 }
 
 * {
@@ -38,7 +48,8 @@ body.dark-mode {
 body {
     font-family: 'Lato', sans-serif;
     color: var(--cor-texto);
-    background-color: var(--cor-fundo);
+    background: var(--bg-body);
+    background-attachment: fixed; /* Efeito Parallax no Fundo */
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -279,7 +290,7 @@ body.dark-mode .hero-content p {
 .sobre {
     padding: 80px 0;
     text-align: center;
-    background-color: var(--branco);
+    background: var(--bg-section-white);
 }
 
 .sobre h2 {
@@ -316,7 +327,7 @@ body.dark-mode .sobre p {
 /* --- Seção Serviços --- */
 .servicos {
     padding: 100px 0; /* Aumentado padding */
-    background-color: var(--cor-fundo);
+    background: var(--bg-section-gray);
     position: relative;
     z-index: 2; /* Garante que fique acima se houver sobreposição */
     box-shadow: 0 -10px 30px rgba(0,0,0,0.05); /* Sombra sutil para separar visualmente da equipe */
@@ -382,7 +393,7 @@ body.dark-mode .sobre p {
 /* --- Seção Loja --- */
 .loja {
     padding: 80px 0;
-    background-color: var(--branco);
+    background: var(--bg-section-white);
     overflow: hidden;
 }
 
@@ -396,7 +407,7 @@ body.dark-mode .sobre p {
 .loja-track {
     display: flex;
     width: max-content;
-    animation: scrollRight 120s linear infinite;
+    animation: scrollRight 160s linear infinite; /* Mais lento para acompanhar a galeria */
 }
 
 /* Pausa ao passar o mouse */
@@ -468,7 +479,7 @@ body.dark-mode .sobre p {
 /* --- Galeria --- */
 .galeria {
     padding: 80px 0;
-    background-color: var(--cor-fundo);
+    background: var(--bg-section-gray);
     overflow: hidden; /* Garante que o slider não crie barra de rolagem horizontal na página */
 }
 
@@ -482,7 +493,7 @@ body.dark-mode .sobre p {
 .galeria-track {
     display: flex;
     width: max-content; /* Permite que os itens fiquem em linha */
-    animation: scroll 40s linear infinite; /* Animação contínua */
+    animation: scroll 80s linear infinite; /* Ajustado para velocidade similar à loja */
 }
 
 /* Pausa a animação ao passar o mouse */
@@ -754,7 +765,7 @@ footer {
 /* --- Seção Equipe --- */
 .equipe {
     padding: 100px 0; /* Aumentado padding para mais respiro */
-    background-color: var(--branco); /* Alternar cor com serviços */
+    background: var(--bg-section-white); /* Alternar cor com serviços */
     border-top: 1px solid rgba(0,0,0,0.05); /* Linha sutil para separar */
 }
 
