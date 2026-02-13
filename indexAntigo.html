@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toda Bela - Estilo e Produtos</title>
+    <style>
+        /* --- Configurações Gerais e Fontes --- */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+        :root {
+            /* Paleta de Cores: Preto, Branco e Roxo */
+            --cor-primaria: #1a1a1a;    /* Preto suave */
+            --cor-secundaria: #8e44ad;  /* Roxo vibrante */
+            --cor-secundaria-dark: #703688; /* Roxo escuro para hover */
+            --cor-fundo: #f9f9f9;
+            --cor-texto: #333;
+            --branco: #ffffff;
+            --verde-whatsapp: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--cor-texto);
+            background-color: var(--cor-fundo);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cor-primaria);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Botões Gerais (Estilo Roxo) */
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-secundaria);
+            color: var(--branco);
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--cor-secundaria-dark);
+        }
+
+        /* --- Cabeçalho --- */
+        header {
+            background-color: var(--branco);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: var(--cor-primaria);
+        }
+
+        .logo span {
+            color: var(--cor-secundaria); /* Detalhe em Roxo */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .nav-links a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* Ícone do Carrinho */
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-left: 20px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background: var(--cor-secundaria); /* Roxo */
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- Hero Section (Banner) --- */
+        .hero {
+            height: 100vh;
+            /* Fundo escuro para destacar o roxo */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(26,26,26,0.8)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--branco);
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--branco);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* --- Seção Sobre --- */
+        .sobre {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--branco);
+        }
+
+        .sobre h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Detalhe roxo embaixo do título */
+        .sobre h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--cor-secundaria);
+            margin: 10px auto 0;
+        }
+
+        .sobre p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* --- Seção Serviços --- */
+        .servicos {
+            padding: 80px 0;
+            background-color: var(--cor-fundo);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--cor-secundaria); /* Roxo */
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-card {
+            background: var(--branco);
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, border 0.3s;
+            border-top: 3px solid transparent;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-5px);
+            border-top: 3px solid var(--cor-secundaria); /* Borda roxa no hover */
+        }
+
+        .servico-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .preco {
+            display: block;
+            color: var(--cor-secundaria); /* Preço em Roxo */
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* --- Seção Loja --- */
+        .loja {
+            padding: 80px 0;
+            background-color: var(--branco);
+        }
+
+        .loja-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .produto-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            background: #fff;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .produto-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .produto-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .produto-nome {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .produto-preco {
+            color: var(--cor-secundaria); /* Preço em Roxo */
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- Galeria --- */
+        .galeria {
+            padding: 80px 0;
+            background-color: var(--cor-fundo);
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .galeria-item {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        .galeria-item::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(142, 68, 173, 0.3); /* Overlay roxo sutil */
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .galeria-item:hover::after {
+            opacity: 1;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            background-color: var(--cor-primaria); /* Fundo Preto */
+            color: var(--branco);
+            padding: 60px 0 20px;
+            border-top: 4px solid var(--cor-secundaria); /* Linha roxa no topo */
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--cor-secundaria); /* Títulos em Roxo */
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col p, .footer-col li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* --- Carrinho Lateral --- */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-left: 4px solid var(--cor-secundaria);
+        }
+
+        .cart-sidebar.active { right: 0; }
+
+        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .close-cart { font-size: 1.5rem; cursor: pointer; color: var(--cor-primaria); }
+        .cart-items { flex: 1; overflow-y: auto; }
+        
+        .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
+        .cart-item-info h4 { font-size: 0.9rem; color: #333; }
+        .cart-item-info span { color: var(--cor-secundaria); font-weight: bold; } /* Roxo */
+        
+        .remove-item { color: #e74c3c; cursor: pointer; font-size: 0.8rem; margin-left: 10px; }
+        
+        .cart-footer { border-top: 1px solid #eee; padding-top: 15px; }
+        .total-row { display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px; color: var(--cor-primaria); }
+        
+        .btn-whatsapp { background-color: var(--verde-whatsapp); width: 100%; text-align: center; margin-top: 20px; }
+        .btn-whatsapp:hover { background-color: #1ebe57; }
+
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 1500; display: none;
+        }
+        .overlay.active { display: block; }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .cart-sidebar { width: 100%; right: -100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Overlay do Carrinho -->
+    <div class="overlay" onclick="toggleCart()"></div>
+
+    <!-- Sidebar do Carrinho -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p style="text-align: center; color: #999; margin-top: 20px;">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Total:</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">
+                Finalizar no WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Toda <span>Bela</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#loja">Loja</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div style="display: flex; align-items: center;">
+                    <div class="cart-icon" onclick="toggleCart()">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <div class="menu-toggle">☰</div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section id="home" class="hero">
+        <div class="hero-content container">
+            <h1>Seu estilo é nossa assinatura</h1>
+            <p>Cortes modernos, tratamentos exclusivos e produtos profissionais.</p>
+            <a href="#loja" class="btn">Ver Produtos</a>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2>Tradição e Modernidade</h2>
+            <p>No espaço Toda Bela combinamos anos de experiência com as tendências mais atuais da moda. Nossa missão é fazer você se sentir confiante e renovado a cada visita, oferecendo tanto serviços de excelência quanto os melhores produtos para cuidar de você em casa.</p>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+            </div>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <h3>Nails Design</h3>
+                    <p>Pé e Mão Simples<br>Esmaltação em Gel<br>Postiça Realista<br>Banho de Gel<br>Molde F1<br> Gel na Tips.</p>
+                    <span class="preco"></span>
+                </div>
+                <div class="servico-card">
+                    <h3>Lash Designer</h3>
+                    <p>TDesign de sobrancelha<br>Brow lamination<br>Volume brasileiro<br>Volume egípcio<br>Mega volume</p>
+                    <span class="preco"></span>
+                </div>
+                <div class="servico-card">
+                    <h3>Hair Designer</h3>
+                    <p>Consultoria de Visagismo<br>Cortes Personalizados<br>Colorimetria Avançada<br>Hair Styling e Penteados<br>Tratamentos e Nutrição<br>Modificações de Estruturas<br>Alisamentos</p>
+                    <span class="preco">R$ 90,00</span>
+                </div>
+                <div class="servico-card">
+                    <h3>Coloração</h3>
+                    <p>Tintura, mechas ou balayagem.</p>
+                    <span class="preco"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Loja -->
+    <section id="loja" class="loja">
+        <div class="container">
+            <div class="section-title">
+                <h2>Loja Virtual</h2>
+                <p>Leve a qualidade do salão para casa.</p>
+            </div>
+
+            <div class="loja-grid">
+                <!-- Produto 1 -->
+                <div class="produto-card">
+                    <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?auto=format&fit=crop&w=500&q=80" alt="Shampoo" class="produto-img">
+                    <div class="produto-info">
+                        <h3 class="produto-nome">Shampoo Antiqueda</h3>
+                        <span class="produto-preco">R$ 45,00</span>
+                        <button class="btn" onclick="addToCart(1, 'Shampoo Antiqueda', 45.00)">Adicionar</button>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="produto-card">
+                    <img src="https://images.unsplash.com/photo-1628102491629-778571d893a3?auto=format&fit=crop&w=500&q=80" alt="Condicionador" class="produto-img">
+                    <div class="produto-info">
+                        <h3 class="produto-nome">Condicionador</h3>
+                        <span class="produto-preco">R$ 48,00</span>
+                        <button class="btn" onclick="addToCart(2, 'Condicionador', 48.00)">Adicionar</button>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="produto-card">
+                    <img src="https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?auto=format&fit=crop&w=500&q=80" alt="Pomada" class="produto-img">
+                    <div class="produto-info">
+                        <h3 class="produto-nome">Pomada Modeladora</h3>
+                        <span class="produto-preco">R$ 35,00</span>
+                        <button class="btn" onclick="addToCart(3, 'Pomada', 35.00)">Adicionar</button>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="produto-card">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?auto=format&fit=crop&w=500&q=80" alt="Óleo" class="produto-img">
+                    <div class="produto-info">
+                        <h3 class="produto-nome">Óleo Reparador</h3>
+                        <span class="produto-preco">R$ 55,00</span>
+                        <button class="btn" onclick="addToCart(4, 'Óleo Reparador', 55.00)">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Galeria -->
+    <section id="galeria" class="galeria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Trabalhos</h2>
+            </div>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Corte">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Barbearia">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Estilo">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f300?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Salão">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Toda Bela</h3>
+                    <p>Realçando sua beleza com profissionalismo e cuidado.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p>📞 (21) 98026-1948</p>
+                    <p>📧 contato@todabela.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Horário</h3>
+                    <p>Ter - Sex: 09:00 - 20:00</p>
+                    <p>Sábado: 09:00 - 18:00</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Localização</h3>
+                    <p>Rua Sete, 739<br>Bonsucesso - Vila do João<br>Rio de Janeiro/RJ</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Toda Bela. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT DA LOJA -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.querySelector('.overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function addToCart(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+            
+            updateCartUI();
+            
+            // Feedback visual
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "Adicionado!";
+            btn.style.backgroundColor = "#1a1a1a"; // Preto ao clicar
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = ""; // Volta ao roxo
+            }, 1000);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartCountElement = document.getElementById('cartCount');
+            const cartTotalElement = document.getElementById('cartTotal');
+
+            const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+            cartCountElement.innerText = totalItems;
+
+            cartItemsContainer.innerHTML = '';
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align: center; color: #999; margin-top: 20px;">Seu carrinho está vazio.</p>';
+            } else {
+                cart.forEach(item => {
+                    totalPrice += item.price * item.quantity;
+                    
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <span>${item.quantity}x R$ ${item.price.toFixed(2).replace('.', ',')}</span>
+                        </div>
+                        <span class="remove-item" onclick="removeFromCart(${item.id})">Remover</span>
+                    `;
+                    cartItemsContainer.appendChild(itemElement);
+                });
+            }
+
+            cartTotalElement.innerText = 'R$ ' + totalPrice.toFixed(2).replace('.', ',');
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+
+            let message = "Olá! Gostaria de fazer um pedido na loja Toda Bela:%0A%0A";
+            let total = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                message += `▪️ ${item.quantity}x ${item.name} - R$ ${subtotal.toFixed(2).replace('.', ',')}%0A`;
+            });
+
+            message += `%0A*Total: R$ ${total.toFixed(2).replace('.', ',')}*`;
+            message += "%0A%0AAguardo instruções para o pagamento e entrega!";
+
+            // ALTERE AQUI O NÚMERO DO WHATSAPP
+            const phoneNumber = "5511999999999"; 
+            
+            const url = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
